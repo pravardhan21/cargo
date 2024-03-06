@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Landing from './Landing';
+import LoginPage from './LoginPage';
+import RegisterPage from './Registerpage';
+import {BrowserRouter as Router, Route,  Routes} from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="App  bg-slate-600">
+      <Router>
+        <Routes> 
+          <Route path="/" element={<Landing />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/landing" element={<Landing/>} />
+          </Routes>        
+        </Router>    </div>
   );
 }
 
 export default App;
+// bg-gradient-to-l w-screen h-screen p-3 text-white from-[#C33764] to-[#1D2671]
